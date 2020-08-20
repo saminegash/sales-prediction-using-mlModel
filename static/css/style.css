@@ -1,163 +1,194 @@
-body {
-  background: #faf3ec;
-  font-family: "Roboto";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", sans-serif;
 }
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #748194;
+.header {
+  height: 100px;
+  background: #34495e;
+  padding: 0 20px;
+  color: #fff;
 }
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #748194;
-}
-:-ms-input-placeholder {
-  /* IE 10+ */
-  color: #748194;
-}
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #748194;
-}
-.container {
-  display: none;
-  position: absolute;
-  width: auto;
-  height: auto;
-  top: calc(50% - 240px);
-  left: calc(40% - 160px);
-  border-radius: 15px 15px 15px 15px;
-}
-.c1 {
-  box-shadow: 0 0 10px grey;
-  background-color: white;
-  width: 300px;
-  height: 500px;
-  display: inline-block;
-  border-radius: 15px 15px 15px 15px;
+.logo {
+  line-height: 100px;
+  float: left;
+  text-transform: uppercase;
 }
 
-.c11 {
-  background-image: url("https://i.pinimg.com/736x/b8/09/22/b80922f6ea2daaf36a6627378662803b--deck-of-cards-phone-wallpapers.jpg");
-  background-size: 300px 400px;
-  background-repeat: no-repeat;
-  background-color: white;
-  width: 300px;
-  height: 400px;
-  display: inline-block;
-  position: absolute;
-  z-index: 4;
-  border-radius: 15px 15px 200px 200px;
+.menu {
+  float: right;
+  line-height: 100px;
 }
-#left,
-#right {
-  color: white;
-  display: inline-block;
-  width: 146px;
-  height: 500px;
-  background-color: white;
-  cursor: pointer;
-}
-#left {
-  border-radius: 15px 0px 0px 15px;
-}
-#right {
-  border-radius: 15px 15px 15px 0px;
-}
-.left_hover {
-  color: #ee9ba3;
-  box-shadow: 5px 0 18px -10px #333;
-  z-index: 1;
-  position: absolute;
-}
-.right_hover {
-  box-shadow: -5px 0 15px -10px #333;
-  z-index: 1;
-  position: absolute;
-}
-.s1class {
-  color: #748194;
-  position: absolute;
-  bottom: 0;
-  left: 63%;
-  margin-left: -50%;
-}
-.s1class span,
-.s2class span {
-  display: block;
-}
-.su {
-  font-size: 20px;
-}
-.s2class {
-  color: #748194;
-  position: absolute;
-  bottom: 0;
-  right: 63%;
-  margin-right: -50%;
-}
-.mainhead {
-  color: white;
-  font-size: 24px;
-  text-align: center;
-  margin-top: 50px;
-}
-.mainp {
-  color: white;
-  font-size: 13px;
-  text-align: center;
-  margin-top: 10px;
-}
-.c2 {
-  background-color: white;
-  width: 300px;
-  height: 500px;
-  border-radius: 15px;
-  position: absolute;
-  left: 370px;
-  display: inline-block;
-}
-.username {
-  font-weight: bold;
-  width: 200px;
-  margin: 0 35px 20px;
-  height: 35px;
-  padding: 6px 15px;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  background: #f6f7f9;
-  color: #748194;
-  font-size: 14px;
-}
-.btn {
-  font-weight: bold;
-  width: 230px;
-  margin: 0 35px 20px;
-  height: 45px;
-  padding: 6px 15px;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  background: #ee9ba3;
-  color: white;
-  font-size: 14px;
-}
-.signup1 {
-  color: #748194;
-  font-size: 30px;
-  text-align: center;
-}
-a {
+.menu a {
+  color: #fff;
+  text-transform: uppercase;
   text-decoration: none;
+  padding: 0 10px;
+  transition: 0.4s;
 }
-.signup2 {
-  color: #748194;
-  font-size: 20px;
+.show-menu-btn,
+.hide-menu-btn {
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+.show-menu-btn {
+  float: right;
+}
+.show-menu-btn i {
+  line-height: 100px;
+}
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover {
+  color: #3498db;
+}
+
+#chk {
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+.content {
+  padding: 0 20px;
+
+  min-height: 85vh;
+  background-image: linear-gradient(120deg, #3498db, #8e44ad);
+}
+.content img {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px 0;
+}
+.content p {
+  text-align: justify;
+}
+
+@media screen and (max-width: 800px) {
+  .show-menu-btn,
+  .hide-menu-btn {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+  }
+  .menu a {
+    display: block;
+    padding: 20px;
+  }
+  .hide-menu-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  #chk:checked ~ .menu {
+    right: 0;
+  }
+}
+
+.login-form {
+  width: 360px;
+  background: #f1f1f1;
+  height: 400px;
+  padding: 30px 15px;
+  border-radius: 10px;
+  position: absolute;
+  left: 30%;
+  /* /* top: 90%; */
+  transform: translate(-50%, 0%);
+}
+.login-form-left {
+  width: 360px;
+  background: #f1f1f1;
+  height: 400px;
+  padding: 30px 15px;
+  border-radius: 10px;
+  position: absolute;
+  left: 70%;
+  /* /* top: 90%; */
+  transform: translate(-50%, 0%);
+}
+.login-form-left h1 {
   text-align: center;
+  margin-bottom: 60px;
 }
-.signup {
-  display: initial;
+.login-form h1 {
+  text-align: center;
+  margin-bottom: 60px;
 }
-.signin {
-  display: initial;
+
+.txtb {
+  border-bottom: 2px solid #adadad;
+  position: relative;
+  margin: 30px 0;
+}
+.txtb input,
+select {
+  font-size: 15px;
+  color: #333;
+  border: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 0 5px;
+  height: 20px;
+}
+
+.txtb span::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.txtb span::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(120deg, #3498db, #8e44ad);
+  transition: 0.5s;
+}
+.focus + span::before {
+  top: -5px;
+}
+.focus + span::after {
+  width: 100%;
+}
+
+.logbtn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
+  background-size: 200%;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.logbtn:hover {
+  background-position: right;
+}
+
+.bottom-text {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 13px;
 }

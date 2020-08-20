@@ -1,25 +1,53 @@
 $(document).ready(function () {
-  $(".container").fadeIn(1000);
-  $(".s2class").css({ color: "#EE9BA3" });
-  $(".s1class").css({ color: "#748194" });
-  $("#left").removeClass("left_hover");
-  $("#right").addClass("right_hover");
-  $(".signin").css({ display: "none" });
-  $(".signup").css({ display: "" });
-});
-$("#right").click(function () {
-  $("#left").removeClass("left_hover");
-  $(".s2class").css({ color: "#EE9BA3" });
-  $(".s1class").css({ color: "#748194" });
-  $("#right").addClass("right_hover");
-  $(".signin").css({ display: "none" });
-  $(".signup").css({ display: "" });
-});
-$("#left").click(function () {
-  $(".s1class").css({ color: "#EE9BA3" });
-  $(".s2class").css({ color: "#748194" });
-  $("#right").removeClass("right_hover");
-  $("#left").addClass("left_hover");
-  $(".signup").css({ display: "none" });
-  $(".signin").css({ display: "" });
+  //For Card Number formatted input
+  var cardNum = document.getElementById("cr_no");
+  cardNum.onkeyup = function (e) {
+    if (this.value == this.lastValue) return;
+    var caretPosition = this.selectionStart;
+    var sanitizedValue = this.value.replace(/[^0-9]/gi, "");
+    var parts = [];
+
+    for (var i = 0, len = sanitizedValue.length; i < len; i += 4) {
+      parts.push(sanitizedValue.substring(i, i + 4));
+    }
+    for (var i = caretPosition - 1; i >= 0; i--) {
+      var c = this.value[i];
+      if (c < "0" || c > "9") {
+        caretPosition--;
+      }
+    }
+    caretPosition += Math.floor(caretPosition / 4);
+
+    this.value = this.lastValue = parts.join("-");
+    this.selectionStart = this.selectionEnd = caretPosition;
+  };
+
+  //For Date formatted input
+  var expDate = document.getElementById("exp");
+  expDate.onkeyup = function (e) {
+    if (this.value == this.lastValue) return;
+    var caretPosition = this.selectionStart;
+    var sanitizedValue = this.value.replace(/[^0-9]/gi, "");
+    var parts = [];
+
+    for (var i = 0, len = sanitizedValue.length; i < len; i += 2) {
+      parts.push(sanitizedValue.substring(i, i + 2));
+    }
+    for (var i = caretPosition - 1; i >= 0; i--) {
+      var c = this.value[i];
+      if (c < "0" || c > "9") {
+        caretPosition--;
+      }
+    }
+    caretPosition += Math.floor(caretPosition / 2);
+
+    this.value = this.lastValue = parts.join("/");
+    this.selectionStart = this.selectionEnd = caretPosition;
+  };
+
+  // Radio button
+  $(".radio-group .radio").click(function () {
+    $(this).parent().parent().find(".radio").removeClass("selected");
+    $(this).addClass("selected");
+  });
 });
