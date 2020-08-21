@@ -12,13 +12,20 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       charset="utf-8"
     ></script>
 
-    <!-- <script src="{{ url_for('static',filename='js/main.js') }}"></script> -->
+    <!--  <script src="{{ url_for('static',filename='js/main.js') }}"></script> -->
   </head>
   <body>
     <div class="header">
@@ -38,18 +45,209 @@
         </label>
       </ul>
     </div>
+    <!-- START TEAM -->
+    <section id="team">
+      <div class="container">
+        <div class="row">
+          <!-- END col-md-5 col-sm-12 pull-right-->
+          <div class="col-md-7 col-sm-12">
+            <div class="row">
+              <div class="col-md-5 col-sm-4">
+                <div class="team-list">
+                  <ul>
+                    <li
+                      class="wow zoomIn"
+                      data-wow-duration="1s"
+                      data-wow-delay=".1s"
+                    >
+                      <a href="#team-1" data-team="team-1">
+                        <figure>
+                          <img
+                            src="{{url_for('static', filename='images/rofias.jpg')}}"
+                            alt="Team Manager | Data Science Enthusiast"
+                          />
+                        </figure>
+                      </a>
+                    </li>
+                    <li
+                      class="active wow zoomIn"
+                      data-wow-duration="1s"
+                      data-wow-delay=".3s"
+                    >
+                      <a href="#team-2" data-team="team-2">
+                        <figure>
+                          <img
+                            src="{{url_for('static', filename='images/sami.jpg')}}"
+                            alt="Team Member image two"
+                          />
+                        </figure>
+                      </a>
+                    </li>
+                    <li
+                      class="wow zoomIn"
+                      data-wow-duration="1s"
+                      data-wow-delay=".5s"
+                    >
+                      <a href="#team-3" data-team="team-3">
+                        <figure>
+                          <img
+                            src="{{url_for('static', filename='images/elvis.png')}}"
+                            alt="Data Science Enthusiast | Mathematics Expert"
+                          />
+                        </figure>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- END team-list-->
+              </div>
+              <!-- END col-sm-4-->
+              <div class="col-md-offset-2 col-md-7 col-sm-8">
+                <div id="team-1" class="team-single">
+                  <div class="team-img">
+                    <img
+                      src="{{url_for('static', filename='images/rofias.jpg')}}"
+                      alt=""
+                    />
+                    <div class="team-social">
+                      <ul>
+                        <li>
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-github"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END team-social-->
+                  </div>
+                  <!-- END team-img-->
+                  <div class="team-info text-center">
+                    <h4>Rofiah Adeshina</h4>
+                    <p>Team Manager &amp; Data Scientist</p>
+                  </div>
+                  <!-- END team-info-->
+                </div>
+                <!-- END team-single-->
 
-    <div class="content">
-      <h1>Team picture with roll to be added on this page</h1>
-    </div>
+                <div id="team-2" class="team-single active">
+                  <div class="team-img">
+                    <img
+                      src="{{url_for('static', filename='images/sami.jpg')}}"
+                      alt=""
+                    />
+                    <div class="team-social">
+                      <ul>
+                        <li>
+                          <a href="https://www.facebook.com/sami.negash.9085"
+                            ><i class="fa fa-facebook"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/samuel_negash"
+                            ><i class="fa fa-twitter"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="https://myaccount.google.com/profile"
+                            ><i class="fa fa-google-plus"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.linkedin.com/in/samuel-negash-hailu-225756164/"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="https://github.com/saminegash"
+                            ><i class="fa fa-github"></i
+                          ></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END team-social-->
+                  </div>
+                  <!-- END team-img-->
+                  <div class="team-info text-center">
+                    <h4>Samuel Negash</h4>
+                    <p>Data Scientist &amp; Developer | Cloud Engineer</p>
+                  </div>
+                  <!-- END team-info-->
+                </div>
+                <!-- END team-single-->
 
-    <script type="text/javascript">
-      $(".txtb input").on("focus", function () {
-        $(this).addClass("focus");
-      });
+                <div id="team-3" class="team-single">
+                  <div class="team-img">
+                    <img
+                      src="{{url_for('static', filename='images/elvis.png')}}"
+                      alt="David"
+                    />
+                    <div class="team-social">
+                      <ul>
+                        <li>
+                          <a href=""><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                          <a href=""><i class="fa fa-github-square"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END team-social-->
+                  </div>
+                  <!-- END team-img-->
+                  <div class="team-info text-center">
+                    <h4>David Elvis</h4>
+                    <p>Data Scientist &amp; Mathematician</p>
+                  </div>
+                  <!-- END team-info-->
+                </div>
+                <!-- END team-single-->
 
-      $(".txtb input").on("blur", function () {
-        if ($(this).val() == "") $(this).removeClass("focus");
+                <!-- END team-single-->
+              </div>
+              <!-- END col-sm-8-->
+            </div>
+            <!-- END row-->
+          </div>
+          <!-- END col-md-7 col-sm-12 -->
+        </div>
+        <!-- END row-->
+      </div>
+      <!-- END container-->
+    </section>
+    <!-- END team-->
+    <!-- END TEAM -->
+
+    <script>
+      $(document).ready(function () {
+        "use strict";
+        $(".team-list").on("click", "a", function (a) {
+          a.preventDefault();
+          var e = $(this).data("team");
+          $(".team-single").removeClass("active"),
+            $(".team-list li").removeClass("active"),
+            $("#" + e).addClass("active"),
+            $(this).parent().addClass("active");
+        });
       });
     </script>
   </body>
