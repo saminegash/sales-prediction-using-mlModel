@@ -10,6 +10,16 @@
     />
     <link
       rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/home.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/home.css') }}"
+    />
+    <link
+      rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
     />
 
@@ -40,17 +50,88 @@
     </div>
 
     <div class="content">
-      <h1>The Notebook and solved Problem To be Added as A blog</h1>
+      <div class="container">
+        <div class="feature-image"></div>
+        <div class="article-section">
+          <div class="article-meta">
+            <div class="date">August 21, 2020</div>
+            <!-- <div class="social">
+              <img
+                src="{{url_for('static', filename='images/icon-facebook.svg')}}"
+                alt="facebook-share"
+              />
+              <img
+                src="{{url_for('static', filename='images/icon-twitter.svg')}}"
+                alt="twitter-share"
+              />
+              <img
+                src="{{url_for('static', filename='images/icon-instagram.svg')}}"
+                alt="instagram-share"
+              />
+            </div> -->
+          </div>
+          <div class="article">
+            <div class="article-content">
+              <div class="article-img">
+                <!-- <img
+                  src="{{url_for('static', filename='images/news-img.jpg')}}"
+                  alt="news-image"
+                /> -->
+              </div>
+              <div class="article-title">
+                Pharmaceutical Sales prediction across multiple stores
+              </div>
+              <div class="article-para">
+                <p>
+                  <h2>Data and Features</h2><br />
+                  The data and feature description for this challenge can be
+                  found
+                  <a href="https://www.kaggle.com/c/rossmann-store-sales/data"
+                    >here</a
+                  >. <br />
+                </p>
+                <h3>
+                  Introduction
+                </h3>
+                <p>Exploring data through well-constructed visualizations and descriptive statistics is a great way to become acquainted with the data you’re working with and formulate hypotheses based on your observations.</p>
+                <h4>Exploratory Data Analysis (EDA) Objectives</h4>
+                <ul>
+                  <ol>1. Quickly describe a dataset; number of rows/columns, missing data, data types, preview.</ol>
+                  <ol>2. Clean corrupted data; handle missing data, invalid data types, incorrect values.</ol>
+                  <ol>3. Visualize data distributions; bar charts, histograms, box plots.</ol>
+                  <ol>4. Calculate and visualize correlations (relationships) between variables; heat map.</ol>
+                </ul>
+              </div>
+              <div class="article-para">
+                <p>
+                  <h2>Lets get to code and do it together</h2><br />
+                  <h3>Importing libraries</h3>
+                  <img src="{{url_for('static', filename='images/import.png')}}" alt="importing">
+                </p>
+                <p>
+                  <h4>Let’s compare the column shapes among each of the data frames using the columns attribute:</h4>
+                  <img src="{{url_for('static', filename='images/shape.png')}}" alt="shape">
+
+                </p>
+                <p> <h4>Merging the train and store data sets</h4></p>
+              
+                
+                <p><img src="{{url_for('static', filename='images/merging.png')}}" alt="shape"></p>
+                <p><h4>Cleaning the data</h4>
+                  <p>Since the goal of this analysis is to pridict the sales for Pharmaceutical store depending on the data, the more similarly we can represent each dataset’s values, the more helpful our analysis will be. Keeping the data specific to each performance category (eg. Customer number ) would be essential. Staying aligned with the task at hand, we can remove the excess columns using the categorical and cardinality, .drop(), mean() and median() methods, like so:</p><br>
+                <h5>Dealing with Categorical data and Cardinality issue </h5></p>
+                <p><img src="{{url_for('static', filename='images/cardinality.png')}}" alt="shape"></p>
+
+                
+
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script type="text/javascript">
-      $(".txtb input").on("focus", function () {
-        $(this).addClass("focus");
-      });
-
-      $(".txtb input").on("blur", function () {
-        if ($(this).val() == "") $(this).removeClass("focus");
-      });
-    </script>
   </body>
 </html>
