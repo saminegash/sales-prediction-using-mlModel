@@ -5,14 +5,14 @@ from flask import render_template
 import pandas as pd
 # creates a Flask application, named app
 app = Flask(__name__)
-prediction = pd.read_csv('notebook/data/Rossman_predictions.csv')
+# prediction = pd.read_csv('notebook/data/Rossman_predictions.csv')
 # a route where we will display a welcome message via an HTML template
 
 
 @app.route("/")
 def home():
 
-    return render_template('home.html')
+    return render_template('home.html', message="")
 
 
 # a route where we will display a welcome message via an HTML template
@@ -21,7 +21,7 @@ def predict():
     """
     For rendering result on HTML GUI
     """
-    return render_template('index.html', message=prediction)
+    return render_template('index.html', message="")
 
 # a route where we will display a welcome message via an HTML template
 
