@@ -2,7 +2,7 @@
 
 from flask import Flask
 from flask import render_template
-import pandas as pd
+# import pandas as pd
 # creates a Flask application, named app
 app = Flask(__name__)
 # prediction = pd.read_csv('notebook/data/Rossman_predictions.csv')
@@ -11,7 +11,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-
     return render_template('home.html', message="")
 
 
