@@ -2,24 +2,26 @@
 
 from flask import Flask
 from flask import render_template
-
+import pandas as pd
 # creates a Flask application, named app
 app = Flask(__name__)
-
+prediction = pd.read_csv('notebook/data/Rossman_predictions.csv')
 # a route where we will display a welcome message via an HTML template
 
 
 @app.route("/")
 def home():
-    message = "sami"
-    return render_template('home.html', message=message)
+
+    return render_template('home.html')
 
 
 # a route where we will display a welcome message via an HTML template
 @app.route("/predict")
 def predict():
-    message = "sami"
-    return render_template('index.html', message=message)
+    """
+    For rendering result on HTML GUI
+    """
+    return render_template('index.html', message=prediction)
 
 # a route where we will display a welcome message via an HTML template
 

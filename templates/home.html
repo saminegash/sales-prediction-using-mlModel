@@ -4,6 +4,27 @@
     <title>Sales Prediction for Pharmaceutical Store</title>
     <!-- <link rel="stylesheet" href="../templates/css/style.css" /> -->
     <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static',filename='images/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static',filename='images/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static',filename='images/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static',filename='images/site.webmanifest') }}"
+    />
+    <link
       rel="stylesheet"
       type="text/css"
       href="{{ url_for('static',filename='css/style.css') }}"
@@ -83,8 +104,19 @@
               </div>
               <div class="article-para">
                 <p>
+                  <h4>Learning outcome from the article</h4>
+                <ul>
+                  <ol>1. Quickly describe a dataset; number of rows/columns, missing data, data types, preview.</ol>
+                  <ol>2. Clean corrupted data; handle missing data, invalid data types, incorrect values.</ol>
+                  <ol>3. Visualize data distributions; bar charts, histograms, box plots.</ol>
+                  <ol>4. Calculate and visualize correlations (relationships) between variables; heat map.</ol>
+                </ul>
+                </p>
+              </div>
+              <div class="article-para">
+                <p>
                   <h2>Data and Features</h2><br />
-                  The data and feature description for this challenge can be
+                  The data and feature description for this Article can be
                   found
                   <a href="https://www.kaggle.com/c/rossmann-store-sales/data"
                     >here</a
@@ -114,17 +146,11 @@
 
                 </p>
                 <p> <h4>Merging the train and store data sets</h4></p>
-              
-                
                 <p><img src="{{url_for('static', filename='images/merging.png')}}" alt="shape"></p>
                 <p><h4>Cleaning the data</h4>
                   <p>Since the goal of this analysis is to pridict the sales for Pharmaceutical store depending on the data, the more similarly we can represent each dataset’s values, the more helpful our analysis will be. Keeping the data specific to each performance category (eg. Customer number ) would be essential. Staying aligned with the task at hand, we can remove the excess columns using the categorical and cardinality, .drop(), mean() and median() methods, like so:</p><br>
                 <h5>Dealing with Categorical data and Cardinality issue </h5></p>
                 <p><img src="{{url_for('static', filename='images/cardinality.png')}}" alt="shape"></p>
-
-                
-
-
               </div>
 
             </div>
