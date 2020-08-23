@@ -2,6 +2,8 @@
 
 from flask import Flask
 from flask import render_template
+from flask import request
+import csv
 # import pandas as pd
 # creates a Flask application, named app
 app = Flask(__name__)
@@ -15,11 +17,12 @@ def home():
 
 
 # a route where we will display a welcome message via an HTML template
-@app.route("/predict")
+@app.route("/predict", methods=['POST', 'GET'])
 def predict():
     """
     For rendering result on HTML GUI
     """
+
     return render_template('index.html', message="")
 
 # a route where we will display a welcome message via an HTML template
@@ -33,10 +36,10 @@ def about():
 # a route where we will display a welcome message via an HTML template
 
 
-@app.route("/visual")
-def visual():
-    message = "sami"
-    return render_template('visual.html', message=message)
+# @app.route("/visual")
+# def visual():
+#     message = "sami"
+#     return render_template('visual.html', message=message)
 
 
 # run the application
