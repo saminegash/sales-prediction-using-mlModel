@@ -6,7 +6,7 @@ from flask import request
 import csv
 from datetime import datetime
 from flask import json
-import pandas as pd
+# import pandas as pd
 # import pandas as pd
 # creates a Flask application, named app
 app = Flask(__name__)
