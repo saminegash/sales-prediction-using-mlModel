@@ -93,14 +93,14 @@
       </h1>
       <div class="login-form-left">
         <h1>Prediction Results</h1>
-        <div>Sales Prediction for {{date}} is {{prediction}}</div>
+        <div>{{message}}</div>
       </div>
 
       <form action="{{ url_for('predict')}}" method="POST" class="login-form">
         <div class="txtb tooltip">
           <h1>Select Date to see the its prediction</h1>
 
-          <input type="date" id="pred_date" name="pred_date" />
+          <input type="date" id="pred_date" name="pred_date" required />
           <span class="tooltiptext"
             >Select date from 2015-08-01 to 2015-09-17</span
           >
