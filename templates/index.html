@@ -38,7 +38,11 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       charset="utf-8"
     ></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+      crossorigin="anonymous"
+    ></script>
     <style>
       /* Tooltip container */
       .tooltip {
@@ -88,12 +92,14 @@
     </div>
 
     <div class="content">
-      <h1 style="text-align: center; padding: 20px;">
+      <h1 style="text-align: center; padding: 10px;">
         Prediction of Pharmaceutical Sales upto 6 Weeks a head!
       </h1>
+
       <div class="login-form-left">
         <h1>Prediction Results</h1>
-        <div>{{message}}</div>
+        <canvas id="myChart"></canvas>
+        <div style="text-align: center; padding: 10px;">{{message}}</div>
       </div>
 
       <form action="{{ url_for('predict')}}" method="POST" class="login-form">
@@ -109,6 +115,71 @@
       </form>
     </div>
 
-    <script type="text/javascript"></script>
+    <script>
+      let myChart = document.getElementById("myChart").getContext("2d");
+      // Global Options
+      var flaskDate = JSON.parse({{labels | tojson}});
+      var flaskSales = JSON.parse({{data | tojson | safe}});
+
+      var dates = flaskDate.date;
+      var sales = flaskSales.sales;
+      var dateslist = []
+
+      console.log(typeof dates);
+      Chart.defaults.global.defaultFontFamily = "Lato";
+      Chart.defaults.global.defaultFontSize = 18;
+      Chart.defaults.global.defaultFontColor = "#777";
+      let massPopChart = new Chart(myChart, {
+        type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data: {
+          labels: dates,
+          datasets: [
+            {
+              label: "Sales Prediction",
+              data: sales,
+              //backgroundColor:'green',
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(54, 162, 235, 0.6)",
+                "rgba(255, 206, 86, 0.6)",
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(153, 102, 255, 0.6)",
+                "rgba(255, 159, 64, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+              ],
+              borderWidth: 1,
+              borderColor: "#777",
+              hoverBorderWidth: 3,
+              hoverBorderColor: "#000",
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Largest Cities In Massachusetts",
+            fontSize: 12,
+          },
+          legend: {
+            display: false,
+            position: "right",
+            labels: {
+              fontColor: "#000",
+            },
+          },
+          layout: {
+            padding: {
+              left: 50,
+              right: 0,
+              bottom: 0,
+              top: 0,
+            },
+          },
+          tooltips: {
+            enabled: true,
+          },
+        },
+      });
+    </script>
   </body>
 </html>

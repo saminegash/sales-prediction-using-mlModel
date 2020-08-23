@@ -149,8 +149,12 @@
                 <p><img src="{{url_for('static', filename='images/merging.png')}}" alt="shape"></p>
                 <p><h4>Cleaning the data</h4>
                   <p>Since the goal of this analysis is to pridict the sales for Pharmaceutical store depending on the data, the more similarly we can represent each dataset’s values, the more helpful our analysis will be. Keeping the data specific to each performance category (eg. Customer number ) would be essential. Staying aligned with the task at hand, we can remove the excess columns using the categorical and cardinality, .drop(), mean() and median() methods, like so:</p><br>
-                <h5>Dealing with Categorical data and Cardinality issue </h5></p>
+                <h4>Dealing with Categorical data and Cardinality issue </h4></p>
                 <p><img src="{{url_for('static', filename='images/cardinality.png')}}" alt="shape"></p>
+                <p><strong>Note:</strong>As shown on the above code we have tried to make the all categorical data in our dataset to have an object data types and we tried to solve the cardinality issue by replacing every integer 0, capital letter O, and string number 0 to have small letter o value</p><br>
+                <h4>Correlation Between Customer and Sales </h4></p>
+                <p><img src="{{url_for('static', filename='images/correlation.png')}}" alt="shape"></p>
+                <p><strong>Note:</strong> We can see from the above correlation graph we have a strong correlation between Sales and Number of customer, means when Customer number increase the the Average Sales also Increases. The correlation as we can see is 0.82 between sales and number of customer</p><br>
               </div>
 
             </div>
