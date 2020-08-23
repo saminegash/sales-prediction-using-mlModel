@@ -22,8 +22,17 @@ def predict():
     """
     For rendering result on HTML GUI
     """
+    if request.method == "GET":
+        return render_template('index.html', select="select date and pridict to see the average sales prediction", date="date_fet", prediction="prediction")
+    elif request.method == "POST":
+        date_fet = request.form.get('pred_date')
+        with open('.data/avgpredfile.csv') as csv_file:
+            data = csv.DictReader(csv_file, delimiter=',')
+            for row in data:
+                if row['Date'] == date_fet:
+                    prediction = row['Sales']
+        return render_template('index.html', select="The Sales Prediction for date: ", date=date_fet, prediction=prediction)
 
-    return render_template('index.html', message="")
 
 # a route where we will display a welcome message via an HTML template
 
