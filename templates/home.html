@@ -1,82 +1,52 @@
 <!-- templates/index.html -->
 <html>
-  <head>
-    <title>Sales Prediction for Pharmaceutical Store</title>
-    <!-- <link rel="stylesheet" href="../templates/css/style.css" /> -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{{ url_for('static',filename='images/apple-touch-icon.png') }}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{{ url_for('static',filename='images/favicon-32x32.png') }}"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{{ url_for('static',filename='images/favicon-16x16.png') }}"
-    />
-    <!-- <link
+
+<head>
+  <title>Sales Prediction for Pharmaceutical Store</title>
+  <!-- <link rel="stylesheet" href="../templates/css/style.css" /> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static',filename='images/apple-touch-icon.png') }}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='images/favicon-32x32.png') }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='images/favicon-16x16.png') }}" />
+  <!-- <link
       rel="manifest"
       href="{{ url_for('static',filename='images/site.webmanifest') }}"
     /> -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='css/style.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='css/home.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='css/home.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-    />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/home.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/home.css') }}" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-      charset="utf-8"
-    ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 
-    <!-- <script src="{{ url_for('static',filename='js/main.js') }}"></script> -->
-  </head>
-  <body>
-    <div class="header">
-      <h2 class="logo">Thimlich Ohinga Team</h2>
-      <input type="checkbox" id="chk" />
-      <label for="chk" class="show-menu-btn">
-        <i class="fas fa-ellipsis-h"></i>
+  <!-- <script src="{{ url_for('static',filename='js/main.js') }}"></script> -->
+</head>
+
+<body>
+  <div class="header">
+    <h2 class="logo">Thimlich Ohinga Team</h2>
+    <input type="checkbox" id="chk" />
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="/">Home</a>
+      <a href="/predict">Predict</a>
+      <!-- <a href="/visual">Visualizations</a> -->
+      <a href="/about">About</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
       </label>
+    </ul>
+  </div>
 
-      <ul class="menu">
-        <a href="/">Home</a>
-        <a href="/predict">Predict</a>
-        <!-- <a href="/visual">Visualizations</a> -->
-        <a href="/about">About</a>
-        <label for="chk" class="hide-menu-btn">
-          <i class="fas fa-times"></i>
-        </label>
-      </ul>
-    </div>
-
-    <div class="content">
-      <div class="container">
-        <div class="feature-image"></div>
-        <div class="article-section">
-          <div class="article-meta">
-            <div class="date">August 21, 2020</div>
-            <!-- <div class="social">
+  <div class="content">
+    <div class="container">
+      <div class="feature-image"></div>
+      <div class="article-section">
+        <div class="article-meta">
+          <div class="date">August 21, 2020</div>
+          <!-- <div class="social">
               <img
                 src="{{url_for('static', filename='images/icon-facebook.svg')}}"
                 alt="facebook-share"
@@ -90,78 +60,113 @@
                 alt="instagram-share"
               />
             </div> -->
-          </div>
-          <div class="article">
-            <div class="article-content">
-              <div class="article-img">
-                <!-- <img
+        </div>
+        <div class="article">
+          <div class="article-content">
+            <div class="article-img">
+              <!-- <img
                   src="{{url_for('static', filename='images/news-img.jpg')}}"
                   alt="news-image"
                 /> -->
-              </div>
-              <div class="article-title">
-                Pharmaceutical Sales prediction across multiple stores
-              </div>
-              <div class="article-para">
-                <p>
-                  <h4>Learning outcome from the article</h4>
-                <ul>
-                  <ol>1. Quickly describe a dataset; number of rows/columns, missing data, data types, preview.</ol>
-                  <ol>2. Clean corrupted data; handle missing data, invalid data types, incorrect values.</ol>
-                  <ol>3. Visualize data distributions; bar charts, histograms, box plots.</ol>
-                  <ol>4. Calculate and visualize correlations (relationships) between variables; heat map.</ol>
-                </ul>
-                </p>
-              </div>
-              <div class="article-para">
-                <p>
-                  <h2>Data and Features</h2><br />
-                  The data and feature description for this Article can be
-                  found
-                  <a href="https://www.kaggle.com/c/rossmann-store-sales/data"
-                    >here</a
-                  >. <br />
-                </p>
-                <h3>
-                  Introduction
-                </h3>
-                <p>Exploring data through well-constructed visualizations and descriptive statistics is a great way to become acquainted with the data you’re working with and formulate hypotheses based on your observations.</p>
-                <h4>Exploratory Data Analysis (EDA) Objectives</h4>
-                <ul>
-                  <ol>1. Quickly describe a dataset; number of rows/columns, missing data, data types, preview.</ol>
-                  <ol>2. Clean corrupted data; handle missing data, invalid data types, incorrect values.</ol>
-                  <ol>3. Visualize data distributions; bar charts, histograms, box plots.</ol>
-                  <ol>4. Calculate and visualize correlations (relationships) between variables; heat map.</ol>
-                </ul>
-              </div>
-              <div class="article-para">
-                <p>
-                  <h2>Lets get to code and do it together</h2><br />
-                  <h3>Importing libraries</h3>
-                  <img src="{{url_for('static', filename='images/import.png')}}" alt="importing">
-                </p>
-                <p>
-                  <h4>Let’s compare the column shapes among each of the data frames using the columns attribute:</h4>
-                  <img src="{{url_for('static', filename='images/shape.png')}}" alt="shape">
-
-                </p>
-                <p> <h4>Merging the train and store data sets</h4></p>
-                <p><img src="{{url_for('static', filename='images/merging.png')}}" alt="shape"></p>
-                <p><h4>Cleaning the data</h4>
-                  <p>Since the goal of this analysis is to pridict the sales for Pharmaceutical store depending on the data, the more similarly we can represent each dataset’s values, the more helpful our analysis will be. Keeping the data specific to each performance category (eg. Customer number ) would be essential. Staying aligned with the task at hand, we can remove the excess columns using the categorical and cardinality, .drop(), mean() and median() methods, like so:</p><br>
-                <h4>Dealing with Categorical data and Cardinality issue </h4></p>
-                <p><img src="{{url_for('static', filename='images/cardinality.png')}}" alt="shape"></p>
-                <p><strong>Note:</strong>As shown on the above code we have tried to make the all categorical data in our dataset to have an object data types and we tried to solve the cardinality issue by replacing every integer 0, capital letter O, and string number 0 to have small letter o value</p><br>
-                <h4>Correlation Between Customer and Sales </h4></p>
-                <p><img src="{{url_for('static', filename='images/correlation.png')}}" alt="shape"></p>
-                <p><strong>Note:</strong> We can see from the above correlation graph we have a strong correlation between Sales and Number of customer, means when Customer number increase the the Average Sales also Increases. The correlation as we can see is 0.82 between sales and number of customer</p><br>
-              </div>
-
             </div>
+            <div class="article-title">
+              Pharmaceutical Sales prediction across multiple stores
+            </div>
+            <div class="article-para">
+              <p>
+              <h4>Learning outcome from the article</h4>
+              <ul>
+                <ol>1. Quickly describe a dataset; number of rows/columns, missing data, data types, preview.</ol>
+                <ol>2. Clean corrupted data; handle missing data, invalid data types, incorrect values.</ol>
+                <ol>3. Visualize data distributions; bar charts, histograms, box plots.</ol>
+                <ol>4. Calculate and visualize correlations (relationships) between variables; heat map.</ol>
+              </ul>
+              </p>
+            </div>
+            <div class="article-para">
+              <p>
+              <h2>Data and Features</h2><br />
+              The data and feature description for this Article can be
+              found
+              <a href="https://www.kaggle.com/c/rossmann-store-sales/data">here</a>. <br />
+              </p>
+              <h3>
+                Introduction
+              </h3>
+              <p>Exploring data through well-constructed visualizations and descriptive statistics is a great way to
+                become acquainted with the data you’re working with and formulate hypotheses based on your observations.
+              </p>
+              <h4>Exploratory Data Analysis (EDA) Objectives</h4>
+              <ul>
+                <ol>1. Quickly describe a dataset; number of rows/columns, missing data, data types, preview.</ol>
+                <ol>2. Clean corrupted data; handle missing data, invalid data types, incorrect values.</ol>
+                <ol>3. Visualize data distributions; bar charts, histograms, box plots.</ol>
+                <ol>4. Calculate and visualize correlations (relationships) between variables; heat map.</ol>
+              </ul>
+            </div>
+            <div class="article-para">
+              <p>
+              <h2>Lets get to code and do it together</h2><br />
+              <h3>Importing libraries</h3>
+              <img src="{{url_for('static', filename='images/import.png')}}" alt="importing">
+              </p>
+              <p>
+              <h4>Let’s compare the column shapes among each of the data frames using the columns attribute:</h4>
+              <img src="{{url_for('static', filename='images/shape.png')}}" alt="shape">
 
+              </p>
+              <p>
+              <h4>Merging the train and store data sets</h4>
+              </p>
+              <p><img src="{{url_for('static', filename='images/merging.png')}}" alt="shape"></p>
+              <p>
+              <h4>Cleaning the data</h4>
+              <p>Since the goal of this analysis is to pridict the sales for Pharmaceutical store depending on the data,
+                the more similarly we can represent each dataset’s values, the more helpful our analysis will be.
+                Keeping the data specific to each performance category (eg. Customer number ) would be essential.
+                Staying aligned with the task at hand, we can remove the excess columns using the categorical and
+                cardinality, .drop(), mean() and median() methods, like so:</p><br>
+              <h4>Dealing with Categorical data and Cardinality issue </h4>
+              </p>
+              <p><img src="{{url_for('static', filename='images/cardinality.png')}}" alt="shape"></p>
+              <p><strong>Note:</strong>As shown on the above code we have tried to make the all categorical data in our
+                dataset to have an object data types and we tried to solve the cardinality issue by replacing every
+                integer 0, capital letter O, and string number 0 to have small letter o value</p><br>
+              <h4>Correlation Between Customer and Sales </h4>
+              </p>
+              <p><img src="{{url_for('static', filename='images/correlation.png')}}" alt="shape"></p>
+              <p><strong>Note:</strong> We can see from the above correlation graph we have a strong correlation between
+                Sales and Number of customer, means when Customer number increase the the Average Sales also Increases.
+                The correlation as we can see is 0.82 between sales and number of customer</p><br>
+            </div>
+            <div class="article-para">
+              <p>
+              <h4>One-Hot Encoding</h4>
+              </p>
+              <p>
+                As machine learning models tend to look for patterns within data, we performed one-hot encoding on
+                categorical features such as DayOfWeek, StateHoliday, StoreType and Assortment as they don’t have an
+                inherent order or numerical significance.
+                Other Features
+              </p>
+              <ul>
+                <ol>
+                  a. DayOfMonth, Year, Month, YearMonth & WeekOfYear: The date field was broken down into these fields
+                  to provide a richer insight into date-related sales trends.</ol>
+                <ol>AvgSales, AvgCustomers, AvgSalesPerCustomer: Stores the average sales per day, average no. of
+                  customers per day and average sales per customer per day respectively for each store.</ol>
+                <ol>3. AvgCustStore, AvgCustStoreMonth, AvgCustStoreYear: Stores the average no. of customers per store
+                  (overall), per store for a particular month and per store for a particular year respectively.</ol>
+                <ol>4. StateHolidayBinary: In addition to categorizing StateHoliday by type, an additional column was
+                  added to simply indicate whether it was a state holiday or not.</ol>
+              </ul>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
